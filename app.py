@@ -39,14 +39,14 @@ def logistic_regression():
             prediction="Risk of Coronary Heart Disease(CHD)"
 
 
-        return render_template("logistic_regression.html", prediction_text="THIS IS {}".format(prediction))
+        return render_template("logistic_regression.html", prediction_text="{}".format(prediction))
     else:
         return render_template("logistic_regression.html")
 
 @app.route('/random_forest', methods=['GET', 'POST'])
 def random_forest():
     if request.method ==  'POST':
-        model = pickle.load(open('lgr.pkl', 'rb'))
+        model = pickle.load(open('rfc.pkl', 'rb'))
         male = float(request.form['gender'])
         age = float(request.form['age'])
         currentSmokeer = float(request.form['currentSmokeer'])
@@ -72,14 +72,14 @@ def random_forest():
         else:
             prediction="Risk of Coronary Heart Disease(CHD)"
 
-        return render_template("random_forest.html", prediction_text="THIS IS {}".format(prediction))
+        return render_template("random_forest.html", prediction_text="{}".format(prediction))
     else:
         return render_template("random_forest.html")
 
 @app.route('/naive_bayes', methods=['GET', 'POST'])
 def naive_bayes():
     if request.method ==  'POST':
-        model = pickle.load(open('lgr.pkl', 'rb'))
+        model = pickle.load(open('nvb.pkl', 'rb'))
         male = float(request.form['gender'])
         age = float(request.form['age'])
         currentSmokeer = float(request.form['currentSmokeer'])
@@ -105,7 +105,7 @@ def naive_bayes():
         else:
             prediction="Risk of Coronary Heart Disease(CHD)"
 
-        return render_template("naive_bayes.html", prediction_text="THIS IS {}".format(prediction))
+        return render_template("naive_bayes.html", prediction_text="{}".format(prediction))
     else:
         return render_template("naive_bayes.html")
 if __name__ == "__main__":
