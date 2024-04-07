@@ -39,7 +39,7 @@ def logistic_regression():
             prediction="Risk of Coronary Heart Disease(CHD)"
 
 
-        return render_template("logistic_regression.html", prediction_text="{}".format(prediction))
+        return render_template("logistic_regression.html", prediction_text="There is {}".format(prediction))
     else:
         return render_template("logistic_regression.html")
 
@@ -72,7 +72,7 @@ def random_forest():
         else:
             prediction="Risk of Coronary Heart Disease(CHD)"
 
-        return render_template("random_forest.html", prediction_text="{}".format(prediction))
+        return render_template("random_forest.html", prediction_text="There is {}".format(prediction))
     else:
         return render_template("random_forest.html")
 
@@ -105,7 +105,7 @@ def naive_bayes():
         else:
             prediction="Risk of Coronary Heart Disease(CHD)"
 
-        return render_template("naive_bayes.html", prediction_text="{}".format(prediction))
+        return render_template("naive_bayes.html", prediction_text="There is {}".format(prediction))
     else:
         return render_template("naive_bayes.html")
 if __name__ == "__main__":
